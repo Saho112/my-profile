@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>my profile</title>
+  <title>school website</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white">
-  <header id="home" class="fixed top-0 left-0 w-full border-b z-50 flex flex-col bg-blue-200 md:flex-row justify-between gap-6 p-4">
-    <h1 class="text-gray-700 font-bold text-3xl">☁かもめ学校</h1>
-    <div class="flex flex-col md:flex-row gap-6">
-      <a href="#home" class="text-gray-700 font-base text-xl hover:underline">ホーム</a>
-      <a href="#photo" class="text-gray-700 font-base text-xl hover:underline">校風</a>
-      <a href="#event" class="text-gray-700 font-base text-xl hover:underline">行事一覧</a>
-      <a href="#question" class="text-gray-700 font-base text-xl hover:underline">よくある質問</a>
+  <header class="fixed top-0 left-0 w-full border-b z-50 bg-blue-200 h-10 md:flex flex-row justify-between gap-6 p-4 h-20">
+    <h1 class="text-gray-700 font-bold text-2xl md:text-3xl">あおぞら学園</h1>
+    <div class="flex flex-row text-sm mt-0 p-0 md:flex-row gap-6 md:h-auto">
+      <a href="#home" class="text-gray-700 font-base md:text-xl hover:underline">ホーム</a>
+      <a href="#event" class="text-gray-700 font-base md:text-xl hover:underline">行事一覧</a>
+      <a href="#question" class="text-gray-700 font-base md:text-xl hover:underline">よくある質問</a>
     </div>
   </header>
-  <main class="pt-20">
-    <div id="photo" class="flex justify-center flex-col mb-10">
+  <main id="home" class="pt-20 md:pt-20">
+    <div class="flex justify-center flex-col mb-10">
       <h3 class="text-gray-800 font-bold text-4xl text-center">~~ 自主・敬愛・創造 ~~</h3>
-      <img src="./images/IMG_20260614_135951.png" alt="校風" class="my-2">
+      <img src="./images/IMG_20260614_135951.png" alt="校風">
     </div>
-    <h2 id="event" class="font-base text-gray-800 text-3xl text-center mb-5">行事一覧</h2>
+    <h2 id="event" class="font-base text-gray-800 text-3xl text-center mb-5 pt-20">行事一覧</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-3 px-5">
       <button class="bg-blue-100 p-4 rounded-lg hover:bg-blue-200">
         <h2 class="text-gray-800 font-base text-xl pb-1">4-6月</h2>
@@ -56,17 +55,17 @@
         <img src="./images/IMG_20260614_140059.png" alt="卒業式" class="my-2 rounded-xl">
       </button>
     </div>
-    <h2 id="question" class="font-base text-gray-800 text-3xl text-center mb-5 mt-10">よくある質問</h2>
+    <h2 id="question" class="font-base text-gray-800 text-3xl text-center mb-5 pt-20">よくある質問</h2>
     <div class="flex flex-col md:flex-row gap-6 px-5 mb-10">
-      <button class="px-3 w-1/3 shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl">
+      <button class="px-3 w-auto shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl md:w-1/3">
         <h4 class="font-bold text-gray-700 text-base">Q1 学習と部活動の両立はできますか？</h4>
         <h4 class="font-base text-gray-700 text-base">多くの生徒が部活動に所属しながら学習にも励んでいます。放課後の自習室や補修制度も充実しており、文武両道を目指せる環境が整っています。</h4>
       </button>
-      <button class="px-3 w-1/3 shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl">
+      <button class="px-3 w-auto shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl md:w-1/3">
         <h4 class="font-bold text-gray-700 text-base">Q2 校則は厳しいですか？</h4>
         <h4 class="font-base text-gray-700 text-base">生徒ひとりひとりが責任ある行動を取ることを大切にしているため、必要最低限の校則を設けています。自主性を尊重しながら、安心して学校生活を送れる環境づくりを行っています。</h4>
       </button>
-      <button class="px-3 w-1/3 shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl">
+      <button class="px-3 w-auto shadow rounded-lg bg-gray-100 p-4 hover:shadow-xl md:w-1/3">
         <h4 class="font-bold text-gray-700 text-base">Q3 どのような進路を目指す生徒が多いですか？</h4>
         <h4 class="font-base text-gray-700 text-base">四年生大学への進学を中心に、専門学校や就職など、生徒の希望に合わせた多様な進路選択をサポートしています。</h4>
       </button>
