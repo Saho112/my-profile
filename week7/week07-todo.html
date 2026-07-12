@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoリスト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300 min-h-screen flex items-center justify-center flex-col">
+    <!-- テキスト入力欄と追加ボタン-->
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-2xl font-bold mb-4">ToDoリスト</h2>
+      <div class="flex mb-4">
+        <input id="taskInput" type="text" placeholder="タスクを入力" class="border border-gray-300 rounded px-2 py-1">
+        <button id="addTaskButton" class="bg-blue-500 text-white px-4 py-1 rounded ml-2">追加</button>
+      </div>
+      <ul id="todolist" class="list-disc pl-5"></ul>
+    </div>
+  </body>
+  <script>
+    //ボタンを押すとタスクがリストに追加される
+    const addTaskBtn = document.getElementById('addTaskButton');
+    const taskInput = document.getElementById('taskInput');
+    const todolist = document.getElementById('todolist');
+
+    addTaskBtn.addEventListener('click', () => {
+      const text = taskInput.value;
+      if (text=="") {
+        return;
+      }
+
+      const item =  document.createElement('li');
+      item.className = "flex items-center justify-between mb-2";
+
+      const taskText = document.createElement('span');
+      taskText.textContent = text;
+      item.appendChild(taskText);
+
+      const doneBtn =  document.createElement('button');
+      doneBtn.textContent = "完了";
+      doneBtn.className = "bg-green-500 text-white px-2 py-1 rounded ml-2";
+
+      doneBtn.addEventListener("click", () => {
+        const isdone = taskText.classList.contains("line-through");
+        if (isdone) {
+          taskText.classList.remove("line-through");
+        } else {
+          taskText.classList.add("line-through");
+        } 
+      });
+
+      item.appendChild(doneBtn);
+      todolist.appendChild(item);
+      taskInput.value = '';
+      });
+  </script>
