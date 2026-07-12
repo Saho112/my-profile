@@ -19,9 +19,9 @@
   </body>
   <script>
     //ボタンを押すとタスクがリストに追加される
-    const addTaskBtn = document.getElementById('addTaskButton');
-    const taskInput = document.getElementById('taskInput');
-    const todolist = document.getElementById('todolist');
+    const addTaskBtn = document.querySelector('#addTaskButton');
+    const taskInput = document.querySelector('#taskInput');
+    const todolist = document.querySelector('#todolist');
 
     addTaskBtn.addEventListener('click', () => {
       const text = taskInput.value;
@@ -32,16 +32,17 @@
       const item =  document.createElement('li');
       item.className = "flex items-center justify-between mb-2";
 
-      const taskText = document.createElement('span');
+      const taskText = document.createElement("span");
       taskText.textContent = text;
       item.appendChild(taskText);
 
-      const doneBtn =  document.createElement('button');
+      const doneBtn =  document.createElement("button");
       doneBtn.textContent = "完了";
       doneBtn.className = "bg-green-500 text-white px-2 py-1 rounded ml-2";
 
       doneBtn.addEventListener("click", () => {
         const isdone = taskText.classList.contains("line-through");
+        taskText.classList.toggle("text-gray-400");
         if (isdone) {
           taskText.classList.remove("line-through");
         } else {
