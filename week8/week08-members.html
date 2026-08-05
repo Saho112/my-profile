@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メンバーリスト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300 min-h-screen">
+    <div class="bg-white p-6 rounded shadow-md">
+      <h2 class="text-2xl font-bold mb-4">メンバーリスト</h2>
+      <div id="memberList"></div>
+    </div>
+  </body>
+  <script>
+    const memberList = document.querySelector("#memberList");
+
+    const profiles = [
+    { name: "伊藤 蓮", job: "フロントエンド", detail: "画面が思い通りに動くと嬉しいです！" },
+    { name: "渡辺 さくら", job: "バックエンド", detail: "エラーが出ても諦めずに直しています" },
+    { name: "中村 陽菜", job: "デザイナー", detail: "見やすくて可愛いデザインが好きです" },
+    { name: "小林 大輝", job: "インフラ", detail: "毎日新しいことをコツコツ勉強中です" },
+    { name: "加藤 美優", job: "QAエンジニア", detail: "みんなが安心して使えるようにチェックします" }
+    ];
+
+    profiles.forEach((profile) => {
+      const member = document.createElement("div");
+      member.className = "mb-4 p-4 border bg-blue-100 rounded shadow";
+
+      const name = document.createElement("h3");
+      name.className = "text-xl font-bold mb-2";
+      name.textContent = profile.name;
+
+      const job = document.createElement("p");
+      job.className = "text-gray-600 mb-2";
+      job.textContent = `職種: ${profile.job}`;
+
+      const detail = document.createElement("p");
+      detail.className = "text-gray-800";
+      detail.textContent = profile.detail;
+
+      member.appendChild(name);
+      member.appendChild(job);
+      member.appendChild(detail);
+
+      memberList.appendChild(member);
+    });
+  </script>
+</html>
