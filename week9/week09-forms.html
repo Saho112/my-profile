@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ユーザー登録フォーム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300 min-h-screen">
+    <div class="bg-white p-6 rounded shadow-md max-w-md mx-auto mt-10">
+      <h2 class="text-2xl font-bold mb-4">ユーザー登録フォーム</h2>
+      <form id="registrationForm" class="space-y-4" novalidate>
+        <div>
+          <label for="name" class="block text-gray-700">名前:</label>
+          <input type="text" id="name" name="name" placeholder="例: 山田太郎" class="w-full p-2 border rounded" required>
+        </div>
+        <div>
+          <label for="email" class="block text-gray-700">メールアドレス:</label>
+          <input type="email" id="email" name="email" placeholder="yamada@example.com" class="w-full p-2 border rounded" required>
+        </div>
+        <div>
+          <label for="password" class="block text-gray-700">パスワード(8文字以上):</label>
+          <input type="password" minlength="8" id="password" name="password" placeholder="8文字以上のパスワード" class="w-full p-2 border rounded" required>
+        </div>
+        <div>
+            <label for="checkbox" class="block text-gray-700">利用規約に同意する:</label>
+            <input type="checkbox" id="checkbox" name="checkbox" class="mr-2" required>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">登録</button>
+      </form>
+      <div id="resultMessage" class="mt-4 text-green-600"></div>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("#registrationForm");
+    const resultMessage = document.querySelector("#resultMessage");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = form.name.value;
+      const email = form.email.value;
+      const password = form.password.value;
+      const checkbox = form.checkbox.checked;
+
+      if (name === "" || email === "" || password === "") {
+        resultMessage.textContent = "すべてのフィールドを入力してください。";
+        resultMessage.className = "mt-4 text-red-600";
+        return;
+      }
+      if (!checkbox) {
+        resultMessage.textContent = "利用規約に同意してください。";
+        resultMessage.className = "mt-4 text-red-600";
+        return;
+      }
+
+      // フォームのデータを処理する（例: サーバーに送信）
+      console.log("名前:", name);
+      console.log("メールアドレス:", email);
+      console.log("パスワード:", password);
+
+      resultMessage.textContent = "登録が完了しました！";
+      resultMessage.className = "mt-4 text-green-600";
+    });
+  </script>
+</html>
